@@ -3,11 +3,12 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="">
-      <ChatEngine height="100vh" 
-      projectID={`${process.env.projectID}`}
-      userName={`${process.env.userName}`}
-      userSecret={`${process.env.userSecret}`}
+    <div className="App">
+      <ChatEngine
+        height="100vh"
+        projectID={process.env.REACT_APP_PROJECT_ID}
+        userName={process.env.REACT_APP_USERNAME}
+        userSecret={process.env.REACT_APP_USERSECRET}
       />
     </div>
   );
