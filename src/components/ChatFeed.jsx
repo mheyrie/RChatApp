@@ -4,6 +4,7 @@ import MyMessage from "./MyMessage";
 import MessageForm from "./MessageForm";
 
 const ChatFeed = (props) => {
+ 
   const { chats, activeChat, userName, messages } = props;
 
   const chat = chats && chats[activeChat];
@@ -19,13 +20,17 @@ const ChatFeed = (props) => {
       return (
         <div key={`msg_${index}`} style={{ width: "100%" }}>
           <div className="message-block">
-            {isMyMessage ? <MyMessage message={message} /> : <ThierMessage message={message} lastMessage={lastMessageKey} />}
+            {isMyMessage ? (
+              <MyMessage message={message} />
+            ) : (
+              <ThierMessage message={message} lastMessage={lastMessageKey} />
+            )}
           </div>
         </div>
       );
     });
   };
-
+  console.log(props);
   return (
     <div>
       <ThierMessage />
