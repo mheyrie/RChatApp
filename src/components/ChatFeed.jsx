@@ -12,15 +12,15 @@ const ChatFeed = (props) => {
     chat.people.map(
       (person, index) =>
         person.last_read === message.id && (
-          <div>
+          <div
             key={`read_${index}`}
-            className="read-receipt" style=
-            {{
+            className="read-receipt"
+            style={{
               float: isMyMessage ? "right" : "left",
               backgroundImage:
                 person.person.avatar && `url(${person.person.avatar})`,
             }}
-          </div>
+          ></div>
         )
     );
 
