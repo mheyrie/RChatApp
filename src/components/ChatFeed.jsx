@@ -1,5 +1,5 @@
 import React from "react";
-import ThierMessage from "./ThierMessage";
+import TheirMessage from "./TheirMessage";
 import MyMessage from "./MyMessage";
 import MessageForm from "./MessageForm";
 
@@ -22,7 +22,7 @@ const ChatFeed = (props) => {
             {isMyMessage ? (
               <MyMessage message={message} />
             ) : (
-              <ThierMessage
+              <TheirMessage
                 message={message}
                 lastMessage={message[lastMessageKey]}
               />
