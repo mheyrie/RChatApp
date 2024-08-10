@@ -1,29 +1,33 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-projectID = process.env.REACT_APP_PROJECT_ID;
 const LoginForm = () => {
-
+  const projectID = process.env.REACT_APP_PROJECT_ID;
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const authObject = {'Project-ID': projectID, 'User-Name': username, 'User-secret': password};
+    const authObject = {
+      "Project-ID": projectID,
+      "User-Name": username,
+      "User-secret": password,
+    };
 
-    try{
-        await axios.get('https://api.chatengine.io/chats', {headers: authObject});
-        localStorage.setItem('username', username);
-        localStorage.setItem('password', password);
+    try {
+      await axios.get("https://api.chatengine.io/chats", {
+        headers: authObject,
+      });
+      localStorage.setItem("username", username);
+      localStorage.setItem("password", password);
 
-        window.location.reload()
-        setError('')
-    } catch(error){
-        setError("Sorry, Incorrect credentials")
+      window.location.reload();
+      setError("");
+    } catch (error) {
+      setError("Sorry, Incorrect credentials");
     }
-  }
-
+  };
 
   return (
     <div>
@@ -52,12 +56,12 @@ const LoginForm = () => {
                 align: "center",
               }}
             >
-                <button className="button">
-                    <span>Start Chatting</span>
-                </button>
+              <button className="button">
+                <span>Start Chatting</span>
+              </button>
             </div>
           </form>
-          <h1 style={{color:'red'}}>{error}</h1>
+          <h1 style={{ color: "red" }}>{error}</h1>
         </div>
       </div>
     </div>

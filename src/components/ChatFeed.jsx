@@ -57,7 +57,7 @@ const ChatFeed = (props) => {
       );
     });
   };
-  console.log(props);
+  // console.log(props);
   return (
     <div className="chat-feed">
       <div className="chat-title-container">
